@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.7
+#!/usr/bin/env python3
 
 """ This file contains code to carry out a simple estimate of the amount of
     Fortran code 'handled' by for2py.
@@ -21,10 +21,16 @@
 import os
 import sys
 import json
-import delphi.translators.for2py.preprocessor
+import logging
+from itertools import chain
+from future.utils import lmap
+from tqdm import tqdm
+from delphi.utils.fp import flatten
+from delphi.translators.for2py import preprocessor
 from delphi.translators.for2py.syntax import *
 
-FORTRAN_EXTENSIONS = ['.f', '.f90', '.for']
+
+FORTRAN_EXTENSIONS = [".f", ".f90", ".for"]
 
 ################################################################################
 #                                                                              #
@@ -39,7 +45,9 @@ FORTRAN_EXTENSIONS = ['.f', '.f90', '.for']
 FN_START = r"\s*(\w*\s*){0,2}function\s+(\w+)\s*\("
 RE_FN_START = re.compile(FN_START, re.I)
 
-PGM_UNIT = r"\s*\w*\s*(program|module|subroutine|(\w*\s*){0,2}function)\s+(\w+)"
+PGM_UNIT = (
+    r"\s*\w*\s*(program|module|subroutine|(\w*\s*){0,2}function)\s+(\w+)"
+)
 RE_PGM_UNIT_START = re.compile(PGM_UNIT, re.I)
 
 PGM_UNIT_SEP = r"\s+contains(\W+)"
@@ -122,8 +130,10 @@ RE_INTERAFCE_STMT = re.compile(INTERAFCE_STMT, re.I)
 END_STMT = r"\s*(\d+|&)?\s*end\s*$"
 RE_END_STMT = re.compile(END_STMT, re.I)
 
-TYPE_NAMES = r"^\s*(integer|real|double\s+precision|logical|dimension|type" \
-             r"|character)\W*"
+TYPE_NAMES = (
+    r"^\s*(integer|real|double\s+precision|logical|dimension|type"
+    r"|character)\W*"
+)
 RE_TYPE_NAMES = re.compile(TYPE_NAMES, re.I)
 
 HANDLED = [
@@ -163,7 +173,7 @@ KEYWD = r"\s*(\d+|&)?\s*\,*\s*([a-z0-9]+).*"
 RE_KEYWD = re.compile(KEYWD)
 
 
-def line_is_handled(fname, line):
+def line_is_handled(filename, line):
     unhandled_keywds, unhandled_lines, used_modules = set(), set(), set()
 
     # Try to find the first keyword in the line
@@ -187,7 +197,7 @@ def line_is_handled(fname, line):
     if first_wd in F_KEYWDS:
         unhandled_keywds.add(first_wd)
     else:
-        unhandled_lines.add((fname, line))
+        unhandled_lines.add((filename, line))
 
     return False, unhandled_keywds, unhandled_lines, used_modules
 
@@ -198,16 +208,17 @@ def line_is_handled(fname, line):
 #                                                                              #
 ################################################################################
 
-def get_code_lines(fname):
+
+def get_code_lines(filename):
     """
         This function performs the pre-processing of the Fortran file and
         returns a list of code lines contained in the file
     """
-    print("@@@ FILE: " + fname)
-    return preprocessor.preprocess_file(fname)
+    logging.debug("@@@ FILE: " + filename)
+    return preprocessor.get_preprocessed_lines_from_file(filename)
 
 
-def process_lines(fname, lines):
+def process_lines(filename, lines):
     """
         This function processes a list of code lines one by one, aggregating
         the results from each one
@@ -219,7 +230,7 @@ def process_lines(fname, lines):
     nlines = len(lines)
     nhandled = 0
     for line in lines:
-        handled, u_keywds, u_lines, u_modules = line_is_handled(fname, line)
+        handled, u_keywds, u_lines, u_modules = line_is_handled(filename, line)
         if handled:
             nhandled += 1
             used_modules |= u_modules
@@ -232,19 +243,25 @@ def process_lines(fname, lines):
                 else:
                     unhandled_keywds[keywd] = 1
 
-    return nlines, nhandled, unhandled_keywds, unhandled_lines, \
-        handled_files, used_modules
+    return (
+        nlines,
+        nhandled,
+        unhandled_keywds,
+        unhandled_lines,
+        handled_files,
+        used_modules,
+    )
 
 
-def process_file(fname):
+def process_file(filename):
     """
         This function processes one individual Fortran file and returns the
         results obtained from it
     """
     # Get a list of pre-processed lines contained within the file
-    code_lines = get_code_lines(fname)
+    code_lines = get_code_lines(filename)
     # Process these code lines one by one and get the results
-    results = process_lines(fname, code_lines)
+    results = process_lines(filename, code_lines)
     return results
 
 
@@ -260,109 +277,108 @@ def process_dir(dirname):
 
     # Get the full path of the directory
     abs_path = os.path.abspath(dirname)
-    print(f"processing: {dirname}")
+    logging.debug(f"processing: {dirname}")
 
     # Get a list of all the contents inside `dirname`
     list_of_files = os.listdir(dirname)
+    xs = flatten(
+        lmap(
+            lambda t: lmap(
+                lambda filename: t[0] + "/" + filename, t[2]
+            ),
+            os.walk(dirname),
+        )
+    )
+    all_files = list(xs)
     # Iterate through each file one by one
-    for fname in list_of_files:
-        full_path_to_file = abs_path + "/" + fname
-        # Check if the file is a directory. If it is, recursively call this
-        # function within this directory first
-        if os.path.isdir(full_path_to_file):
-            nf1, nt1, nh1, uk1, ul1, hf, fmap = process_dir(full_path_to_file)
-            # Add the result of this directory to the total counters
-            nfiles += nf1
-            ntot += nt1
-            nhandled += nh1
-            handled_files += hf
-            for keywd in uk1:
+    for filepath in tqdm(all_files, ncols=80):
+        _, fext = os.path.splitext(filepath)
+        if fext in FORTRAN_EXTENSIONS:
+            # Process the contents of the file and get the results
+            (
+                ftot,
+                fhandled,
+                u_keywds,
+                u_lines,
+                h_files,
+                u_modules,
+            ) = process_file(filepath)
+            # Add the result to the total counters
+            ntot += ftot
+            nhandled += fhandled
+            handled_files += h_files
+
+            for keywd in u_keywds:
                 if keywd in unhandled_keywds:
-                    unhandled_keywds[keywd] += uk1[keywd]
+                    unhandled_keywds[keywd] += u_keywds[keywd]
                 else:
-                    unhandled_keywds[keywd] = uk1[keywd]
-
-            unhandled_lines |= ul1
-            file_map.update(fmap)
+                    unhandled_keywds[keywd] = u_keywds[keywd]
+            unhandled_lines |= u_lines
+            nfiles += 1
+            pct_handled = fhandled / ftot * 100
+            file_map[filepath] = {
+                "Total number of lines": ftot,
+                "Number of lines handled": fhandled,
+                "Percentage of file handled": f"{pct_handled:.1f}%",
+                "Imported modules": list(u_modules),
+                "Unhandled keywords": u_keywds,
+                "Unhandled lines": [line[1] for line in list(u_lines)],
+            }
         else:
-            # If this is a file, get the file extension and check if it is
-            # supported by this script
-            _, fext = os.path.splitext(fname)
-            if fext in FORTRAN_EXTENSIONS:
-                # Process the contents of the file and get the results
-                ftot, fhandled, u_keywds, u_lines, h_files, u_modules = \
-                    process_file(full_path_to_file)
-                # Add the result to the total counters
-                ntot += ftot
-                nhandled += fhandled
-                handled_files += h_files
+            logging.debug(f"Ignoring {filepath} [unrecognized extension]")
 
-                for keywd in u_keywds:
-                    if keywd in unhandled_keywds:
-                        unhandled_keywds[keywd] += u_keywds[keywd]
-                    else:
-                        unhandled_keywds[keywd] = u_keywds[keywd]
-                unhandled_lines |= u_lines
-                nfiles += 1
-                pct_handled = fhandled / ftot * 100
-                file_map[fname] = {
-                    "Total number of lines": ftot,
-                    "Number of lines handled": fhandled,
-                    "Percentage of file handled": f"{pct_handled:.1f}%",
-                    "Imported modules": list(u_modules),
-                    "Unhandled keywords": u_keywds,
-                    "Unhandled lines": [line[1] for line in list(u_lines)],
-                }
-            else:
-                sys.stderr.write(f"\n    *** Ignoring {fname} [unrecognized "
-                                 f"extension]\n")
-
-    return (nfiles, ntot, nhandled, unhandled_keywds, unhandled_lines,
-            handled_files, file_map)
-
-
-def usage():
-    sys.stderr.write("Usage: measure-coverage.py <src-directory>\n")
-
-
-def errmsg(msg):
-    sys.stderr.write(msg + "\n")
-    sys.exit(1)
+    return (
+        nfiles,
+        ntot,
+        nhandled,
+        unhandled_keywds,
+        unhandled_lines,
+        handled_files,
+        file_map,
+    )
 
 
 def print_results(results):
     nfiles, ntot, nhandled, u_keywds, u_lines, h_files, file_map = results
-    pct_handled = h_files/nfiles * 100
-    print(f"FILES: total = {nfiles}; handled = {h_files} "
-          f"[{pct_handled:.1f}%]\n")
+    pct_handled = h_files / nfiles * 100
+    logging.debug(
+        f"FILES: total = {nfiles}; handled = {h_files} "
+        f"[{pct_handled:.1f}%]\n"
+    )
 
-    pct_handled = nhandled/ntot * 100
-    print(f"LINES: total = {ntot}; handled = {nhandled} [{pct_handled:.1f}%]\n")
+    pct_handled = nhandled / ntot * 100
+    logging.debug(
+        f"LINES: total = {ntot}; handled = {nhandled} [{pct_handled:.1f}%]\n"
+    )
 
     if u_keywds != set():
-        print("UNHANDLED KEYWORDS:")
-        print("------------------")
+        logging.debug("UNHANDLED KEYWORDS:")
+        logging.debug("------------------")
         for item in u_keywds:
-            print(f"    {item} : {u_keywds[item]}")
+            logging.debug(f"    {item} : {u_keywds[item]}")
 
     if u_lines != set():
-        print("UNHANDLED LINES:")
-        print("---------------")
+        logging.debug("UNHANDLED LINES:")
+        logging.debug("---------------")
         for item in u_lines:
-            print(f"    {item}")
-
-    with open('coverage_file_map.json', 'w') as fp:
-        json.dump(file_map, fp, indent=4)
-
-
-def main():
-    if len(sys.argv) < 2:
-        usage()
-        sys.exit(1)
-
-    results = process_dir(sys.argv[1])
-    print_results(results)
+            logging.debug(f"    {item}")
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Measure for2py coverage of a directory."
+    )
+    parser.add_argument("directory", help="The directory to process")
+    parser.add_argument("-v", "--verbose", action="store_true")
+
+    args = parser.parse_args()
+
+    if args.verbose:
+        logging.basicConfig(level=logging.DEBUG)
+
+    results = process_dir(args.directory)
+
+    with open("coverage_file_map.json", "w") as fp:
+        json.dump(results[-1], fp, indent=4)
