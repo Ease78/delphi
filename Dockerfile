@@ -1,5 +1,4 @@
-FROM        ubuntu:20.04
-MAINTAINER  Paul D. Hein <pauldhein@email.arizona.edu>
+FROM        ubuntu:18.04
 CMD         bash
 
 RUN apt-get update \
@@ -16,13 +15,12 @@ RUN apt-get update \
       git \
       tar \
       wget \
-      python3.7 \
-      python3.7-venv \
+      python3 \
       doxygen \
       openjdk-8-jdk \
       libgraphviz-dev \
       graphviz \
-      nlohmann-json3-dev \
+      nlohmann-json-dev \
       libsqlite3-dev \
       libboost-all-dev \
       libeigen3-dev \
@@ -31,13 +29,13 @@ RUN apt-get update \
       libfmt-dev \
       librange-v3-dev \
     && git clone https://github.com/ml4ai/delphi \
-    && curl http://vanga.sista.arizona.edu/delphi_data/delphi.db -o delphi/data/delphi.db \
-    && curl http://vanga.sista.arizona.edu/delphi_data/model_files.tar.gz -o delphi/data/model_files.tar.gz
+    && curl http://vanga.sista.arizona.edu/delphi_data/delphi.db -o delphi/data/delphi.db
 
 
 # Set up virtual environment
 ENV VIRTUAL_ENV=/delphi_venv
-RUN python3.7 -m venv $VIRTUAL_ENV
+RUN apt-get install -y python3-venv
+RUN python3.6 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Set the environment variable DELPHI_DB to point to the SQLite3 database.
@@ -70,5 +68,11 @@ RUN pip install wheel && \
       SQLAlchemy \
       flask-sqlalchemy \
       flask-executor \
-      python-dateutil \
-  && make extensions
+      python-dateutil
+
+COPY scripts/install_cmake_from_source.sh scripts/
+RUN apt install sudo\
+&& ./scripts/install_cmake_from_source.sh\
+&& git clone https://github.com/nlohmann/json && cd json && mkdir build\
+&& cd build && cmake .. && make -j && make -j install 
+COPY lib/* lib
