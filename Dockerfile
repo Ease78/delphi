@@ -70,8 +70,12 @@ RUN pip install wheel && \
       flask-executor \
       python-dateutil
 
-COPY scripts/install_cmake_from_source.sh scripts/
+RUN git fetch && git checkout debug_compilation_error
+
 RUN apt install sudo\
 && ./scripts/install_cmake_from_source.sh\
 && git clone https://github.com/nlohmann/json && cd json && mkdir build\
 && cd build && cmake .. && make -j && make -j install 
+
+RUN ./scripts/install_range-v3_from_source
+RUN ./scripts/install_pybind11_from_source
