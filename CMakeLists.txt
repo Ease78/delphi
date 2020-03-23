@@ -18,7 +18,7 @@ include_directories(lib)
 include_directories(external)
 include_directories(${Boost_INCLUDE_DIR})
 
-find_package(range-v3 REQUIRED)
+find_package(range-v3 0.10.0 REQUIRED)
 find_package(Eigen3 REQUIRED NO_MODULE)
 find_package(fmt REQUIRED)
 find_package(nlohmann_json REQUIRED)

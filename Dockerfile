@@ -75,4 +75,3 @@ RUN apt install sudo\
 && ./scripts/install_cmake_from_source.sh\
 && git clone https://github.com/nlohmann/json && cd json && mkdir build\
 && cd build && cmake .. && make -j && make -j install 
-COPY lib/* lib
