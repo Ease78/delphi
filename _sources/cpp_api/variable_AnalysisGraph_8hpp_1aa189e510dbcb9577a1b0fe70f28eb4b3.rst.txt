@@ -1,0 +1,13 @@
+.. _exhale_variable_AnalysisGraph_8hpp_1aa189e510dbcb9577a1b0fe70f28eb4b3:
+
+Variable DEFAULT_N_SAMPLES
+==========================
+
+- Defined in :ref:`file_lib_AnalysisGraph.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: DEFAULT_N_SAMPLES

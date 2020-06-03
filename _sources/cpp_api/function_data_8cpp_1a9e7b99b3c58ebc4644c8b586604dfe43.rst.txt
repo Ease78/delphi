@@ -1,0 +1,13 @@
+.. _exhale_function_data_8cpp_1a9e7b99b3c58ebc4644c8b586604dfe43:
+
+Function get_data_value(string, string, string, string, int, int, string, bool)
+===============================================================================
+
+- Defined in :ref:`file_lib_data.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_data_value(string, string, string, string, int, int, string, bool)

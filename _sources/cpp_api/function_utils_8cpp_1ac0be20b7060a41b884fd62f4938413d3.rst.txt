@@ -1,0 +1,13 @@
+.. _exhale_function_utils_8cpp_1ac0be20b7060a41b884fd62f4938413d3:
+
+Function delphi::utils::mean
+============================
+
+- Defined in :ref:`file_lib_utils.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: delphi::utils::mean(std::vector<double>)

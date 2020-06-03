@@ -1,0 +1,58 @@
+
+.. _file_lib_kde.cpp:
+
+File kde.cpp
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_lib>` (``lib``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``lib/kde.cpp``)
+----------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_lib_kde.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``boost/lambda/bind.hpp``
+
+- ``boost/lambda/lambda.hpp``
+
+- ``boost/range/adaptors.hpp``
+
+- ``boost/range/algorithm/for_each.hpp``
+
+- ``boost/range/irange.hpp``
+
+- ``boost/range/numeric.hpp``
+
+- ``kde.hpp`` (:ref:`file_lib_kde.hpp`)
+
+- ``random`` (:ref:`file_lib_random_variables.cpp`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_kde_8cpp_1a4a402bedd34e9d590ef0695140d496ba`
+

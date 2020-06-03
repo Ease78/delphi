@@ -1,0 +1,28 @@
+
+.. _program_listing_file_lib_random_variables.cpp:
+
+Program Listing for File random_variables.cpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_lib_random_variables.cpp>` (``lib/random_variables.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #include "random_variables.hpp"
+   #include <iostream>
+   #include <iterator>
+   #include <random>
+   
+   double RV::sample() {
+     std::vector<double> s;
+   
+     std::sample(this->dataset.begin(),
+                 this->dataset.end(),
+                 std::back_inserter(s),
+                 1,
+                 std::mt19937{std::random_device{}()});
+   
+     return s[0];
+   }

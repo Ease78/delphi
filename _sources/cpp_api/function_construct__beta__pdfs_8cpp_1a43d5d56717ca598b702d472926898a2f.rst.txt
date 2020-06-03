@@ -1,0 +1,13 @@
+.. _exhale_function_construct__beta__pdfs_8cpp_1a43d5d56717ca598b702d472926898a2f:
+
+Function construct_adjective_response_map(mt19937, uniform_real_distribution<double>&, normal_distribution<double>&, size_t)
+============================================================================================================================
+
+- Defined in :ref:`file_lib_construct_beta_pdfs.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: construct_adjective_response_map(mt19937, uniform_real_distribution<double>&, normal_distribution<double>&, size_t)

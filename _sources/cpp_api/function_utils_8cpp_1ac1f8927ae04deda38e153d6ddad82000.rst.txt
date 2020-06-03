@@ -1,0 +1,13 @@
+.. _exhale_function_utils_8cpp_1ac1f8927ae04deda38e153d6ddad82000:
+
+Function delphi::utils::sum
+===========================
+
+- Defined in :ref:`file_lib_utils.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: delphi::utils::sum(std::vector<double>)

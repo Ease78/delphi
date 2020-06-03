@@ -1,0 +1,16 @@
+.. _exhale_class_classTran__Mat__Cell:
+
+Class Tran_Mat_Cell
+===================
+
+- Defined in :ref:`file_lib_tran_mat_cell.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: Tran_Mat_Cell
+   :members:
+   :protected-members:
+   :undoc-members:

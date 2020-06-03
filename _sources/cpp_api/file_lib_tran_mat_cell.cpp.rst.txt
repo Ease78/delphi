@@ -1,0 +1,39 @@
+
+.. _file_lib_tran_mat_cell.cpp:
+
+File tran_mat_cell.cpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_lib>` (``lib``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``lib/tran_mat_cell.cpp``)
+--------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_lib_tran_mat_cell.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``range/v3/all.hpp``
+
+- ``tran_mat_cell.hpp`` (:ref:`file_lib_tran_mat_cell.hpp`)
+
+
+
+
+

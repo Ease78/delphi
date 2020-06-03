@@ -1,0 +1,1574 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>delphi.apps.rest_api package &mdash; delphi  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> delphi
+          
+
+          
+            
+            <img src="_static/delphi_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model.html">The Delphi model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GrFN_API.html">GroundedFunctionNetwork API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grfn_spec.html">Grounded Function Network (GrFN) Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grfn_spec.html#change-log">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delphi_database.html">The Delphi Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_api/library_root.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grfn_openapi.html">GrFN OpenAPI Specification</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">delphi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>delphi.apps.rest_api package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/delphi.apps.rest_api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="delphi-apps-rest-api-package">
+<h1>delphi.apps.rest_api package<a class="headerlink" href="#delphi-apps-rest-api-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-delphi.apps.rest_api.api">
+<span id="delphi-apps-rest-api-api-module"></span><h2>delphi.apps.rest_api.api module<a class="headerlink" href="#module-delphi.apps.rest_api.api" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.listAllModels">
+<code class="sig-name descname">listAllModels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#listAllModels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.listAllModels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return UUIDs for all the models in the database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.createNewModel">
+<code class="sig-name descname">createNewModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#createNewModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.createNewModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new Delphi model.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.search_indicators">
+<code class="sig-name descname">search_indicators</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#search_indicators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.search_indicators" title="Permalink to this definition">¶</a></dt>
+<dd><p>A very basic, naive text search for indicators with the following search criteria
+- start: start year
+- end: end year
+- geolocation: location text
+- match: matching string</p>
+<p>The search returns a listing of distinct indicator names/variables that match the criteria</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.get_indicator_detail">
+<code class="sig-name descname">get_indicator_detail</code><span class="sig-paren">(</span><em class="sig-param">indicator</em>, <em class="sig-param">start</em>, <em class="sig-param">end</em>, <em class="sig-param">geolocation</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#get_indicator_detail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.get_indicator_detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method to return raw indicator data, applying the following filters
+- indicator: indicator string
+- start: start yaer
+- end: end year
+- geolocation: geolocation string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.indicator_detail">
+<code class="sig-name descname">indicator_detail</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#indicator_detail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.indicator_detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns raw indicator data given the following search criteria
+- indicator: indicator string
+- start: start year
+- end: end year
+- geolocation: geolocation string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.search_concept_indicators">
+<code class="sig-name descname">search_concept_indicators</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#search_concept_indicators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.search_concept_indicators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of concepts,  this endpoint returns their respective matching
+indicators. The search parameters are:
+- concepts: a list of concepts
+- start: start year
+- end: end year
+- geolocation: geolocation string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getIndicators">
+<code class="sig-name descname">getIndicators</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getIndicators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getIndicators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of concepts, this endpoint returns their respective matching
+indicators. The search parameters are:
+- start/end: To specify search criteria in years (YYYY)
+- geolocation: To match indicators with matching geolocation
+- func: To apply a transform function onto the raw indicator values
+- concepts: List of concepts
+- outputResolution: month/year</p>
+<p>The search will return a listing of matching indicators, sorted by
+similarity score. For each concept a maximum of 10 indicator matches will
+be returned. If there are no matches for a given concept an empty array is
+returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.createProjection">
+<code class="sig-name descname">createProjection</code><span class="sig-paren">(</span><em class="sig-param">modelID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#createProjection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.createProjection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getExperimentResults">
+<code class="sig-name descname">getExperimentResults</code><span class="sig-paren">(</span><em class="sig-param">modelID: str</em>, <em class="sig-param">experimentID: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getExperimentResults"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getExperimentResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch experiment results</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.ping">
+<code class="sig-name descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#ping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Health-check / Ping</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.createNewICM">
+<code class="sig-name descname">createNewICM</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#createNewICM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.createNewICM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new ICM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.listAllICMs">
+<code class="sig-name descname">listAllICMs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#listAllICMs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.listAllICMs" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all ICMs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getICMByUUID">
+<code class="sig-name descname">getICMByUUID</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getICMByUUID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getICMByUUID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch an ICM by UUID</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.deleteICM">
+<code class="sig-name descname">deleteICM</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#deleteICM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.deleteICM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an ICM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.updateICMMetadata">
+<code class="sig-name descname">updateICMMetadata</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#updateICMMetadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.updateICMMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the metadata for an existing ICM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getICMPrimitives">
+<code class="sig-name descname">getICMPrimitives</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getICMPrimitives"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getICMPrimitives" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all ICM primitives (TODO - needs filter support)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.createICMPrimitive">
+<code class="sig-name descname">createICMPrimitive</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#createICMPrimitive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.createICMPrimitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a new causal primitive</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getICMPrimitive">
+<code class="sig-name descname">getICMPrimitive</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">prim_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getICMPrimitive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getICMPrimitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a specific causal primitive</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.updateICMPrimitive">
+<code class="sig-name descname">updateICMPrimitive</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">prim_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#updateICMPrimitive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.updateICMPrimitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>update an existing ICM primitive (can use this for disable?)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.deleteICMPrimitive">
+<code class="sig-name descname">deleteICMPrimitive</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">prim_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#deleteICMPrimitive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.deleteICMPrimitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete (disable) this ICM primitive</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getEvidenceForID">
+<code class="sig-name descname">getEvidenceForID</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">prim_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getEvidenceForID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getEvidenceForID" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns evidence for a causal primitive (needs pagination support)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.attachEvidence">
+<code class="sig-name descname">attachEvidence</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">prim_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#attachEvidence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.attachEvidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>attach evidence to a primitive</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getEvidenceByID">
+<code class="sig-name descname">getEvidenceByID</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">evid_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getEvidenceByID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getEvidenceByID" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an individual piece of evidence</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.updateEvidence">
+<code class="sig-name descname">updateEvidence</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">evid_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#updateEvidence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.updateEvidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>update evidence item</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.deleteEvidence">
+<code class="sig-name descname">deleteEvidence</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">evid_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#deleteEvidence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.deleteEvidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete evidence item</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.recalculateICM">
+<code class="sig-name descname">recalculateICM</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#recalculateICM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.recalculateICM" title="Permalink to this definition">¶</a></dt>
+<dd><p>indication that it is safe to recalculate/recompose model after performing some number of CRUD operations</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.archiveICM">
+<code class="sig-name descname">archiveICM</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#archiveICM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.archiveICM" title="Permalink to this definition">¶</a></dt>
+<dd><p>archive an ICM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.branchICM">
+<code class="sig-name descname">branchICM</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#branchICM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.branchICM" title="Permalink to this definition">¶</a></dt>
+<dd><p>branch an ICM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.fuseICMs">
+<code class="sig-name descname">fuseICMs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#fuseICMs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.fuseICMs" title="Permalink to this definition">¶</a></dt>
+<dd><p>fuse two ICMs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.query">
+<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query the ICM using SPARQL</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.createExperiment">
+<code class="sig-name descname">createExperiment</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#createExperiment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.createExperiment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an experiment over the model</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getExperiments">
+<code class="sig-name descname">getExperiments</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getExperiments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getExperiments" title="Permalink to this definition">¶</a></dt>
+<dd><p>list active (running or completed) experiments</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getExperiment">
+<code class="sig-name descname">getExperiment</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">exp_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getExperiment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getExperiment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch experiment results</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.deleteExperiment">
+<code class="sig-name descname">deleteExperiment</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">exp_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#deleteExperiment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.deleteExperiment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete experiment</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.traverse">
+<code class="sig-name descname">traverse</code><span class="sig-paren">(</span><em class="sig-param">uuid: str</em>, <em class="sig-param">prim_id: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#traverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>traverse through the ICM using a breadth-first search</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.api.getVersion">
+<code class="sig-name descname">getVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/api.html#getVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.api.getVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the version of the ICM API supported</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-delphi.apps.rest_api.config">
+<span id="delphi-apps-rest-api-config-module"></span><h2>delphi.apps.rest_api.config module<a class="headerlink" href="#module-delphi.apps.rest_api.config" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-delphi.apps.rest_api.icm_api_skeleton_generator">
+<span id="delphi-apps-rest-api-icm-api-skeleton-generator-module"></span><h2>delphi.apps.rest_api.icm_api_skeleton_generator module<a class="headerlink" href="#module-delphi.apps.rest_api.icm_api_skeleton_generator" title="Permalink to this headline">¶</a></h2>
+<p>Script to generate the skeleton of a Flask REST API from an OpenAPI 3.0
+YAML specification.</p>
+<dl class="function">
+<dt id="delphi.apps.rest_api.icm_api_skeleton_generator.get_ref">
+<code class="sig-name descname">get_ref</code><span class="sig-paren">(</span><em class="sig-param">ref_string</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/icm_api_skeleton_generator.html#get_ref"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.icm_api_skeleton_generator.get_ref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.icm_api_skeleton_generator.Property">
+<em class="property">class </em><code class="sig-name descname">Property</code><span class="sig-paren">(</span><em class="sig-param">schema_name</em>, <em class="sig-param">property_name</em>, <em class="sig-param">dictionary</em>, <em class="sig-param">global_schema_dict</em>, <em class="sig-param">is_required: bool</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/icm_api_skeleton_generator.html#Property"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.icm_api_skeleton_generator.Property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.icm_api_skeleton_generator.DatabaseModel">
+<em class="property">class </em><code class="sig-name descname">DatabaseModel</code><span class="sig-paren">(</span><em class="sig-param">schema_name</em>, <em class="sig-param">schema_dict</em>, <em class="sig-param">global_schema_dict</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/icm_api_skeleton_generator.html#DatabaseModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.icm_api_skeleton_generator.DatabaseModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="delphi.apps.rest_api.icm_api_skeleton_generator.DatabaseModel.process_property">
+<code class="sig-name descname">process_property</code><span class="sig-paren">(</span><em class="sig-param">property_name</em>, <em class="sig-param">property_dict</em>, <em class="sig-param">required</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/icm_api_skeleton_generator.html#DatabaseModel.process_property"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.icm_api_skeleton_generator.DatabaseModel.process_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.icm_api_skeleton_generator.DataclassModel">
+<em class="property">class </em><code class="sig-name descname">DataclassModel</code><span class="sig-paren">(</span><em class="sig-param">schema_name</em>, <em class="sig-param">schema_dict</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/icm_api_skeleton_generator.html#DataclassModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.icm_api_skeleton_generator.DataclassModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.icm_api_skeleton_generator.construct_view_lines">
+<code class="sig-name descname">construct_view_lines</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">metadata</em><span class="sig-paren">)</span> &#x2192; List[str]<a class="reference internal" href="_modules/delphi/apps/rest_api/icm_api_skeleton_generator.html#construct_view_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.icm_api_skeleton_generator.construct_view_lines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="delphi.apps.rest_api.icm_api_skeleton_generator.write_views">
+<code class="sig-name descname">write_views</code><span class="sig-paren">(</span><em class="sig-param">yml</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/icm_api_skeleton_generator.html#write_views"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.icm_api_skeleton_generator.write_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-delphi.apps.rest_api.make_plots">
+<span id="delphi-apps-rest-api-make-plots-module"></span><h2>delphi.apps.rest_api.make_plots module<a class="headerlink" href="#module-delphi.apps.rest_api.make_plots" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-delphi.apps.rest_api.models">
+<span id="delphi-apps-rest-api-models-module"></span><h2>delphi.apps.rest_api.models module<a class="headerlink" href="#module-delphi.apps.rest_api.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.JsonEncodedList">
+<em class="property">class </em><code class="sig-name descname">JsonEncodedList</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#JsonEncodedList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.JsonEncodedList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.sql.type_api.TypeDecorator</span></code></p>
+<p>Enables list storage by encoding and decoding on the fly.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.JsonEncodedList.impl">
+<code class="sig-name descname">impl</code><a class="headerlink" href="#delphi.apps.rest_api.models.JsonEncodedList.impl" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.sql.sqltypes.Text</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="delphi.apps.rest_api.models.JsonEncodedList.process_bind_param">
+<code class="sig-name descname">process_bind_param</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">dialect</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#JsonEncodedList.process_bind_param"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.JsonEncodedList.process_bind_param" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a bound parameter value to be converted.</p>
+<p>Subclasses override this method to return the
+value that should be passed along to the underlying
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeEngine</span></code> object, and from there to the
+DBAPI <code class="docutils literal notranslate"><span class="pre">execute()</span></code> method.</p>
+<p>The operation could be anything desired to perform custom
+behavior, such as transforming or serializing data.
+This could also be used as a hook for validating logic.</p>
+<p>This operation should be designed with the reverse operation
+in mind, which would be the process_result_value method of
+this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – Data to operate upon, of any type expected by
+this method in the subclass.  Can be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>dialect</strong> – the <code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code> in use.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="delphi.apps.rest_api.models.JsonEncodedList.process_result_value">
+<code class="sig-name descname">process_result_value</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">dialect</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#JsonEncodedList.process_result_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.JsonEncodedList.process_result_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a result-row column value to be converted.</p>
+<p>Subclasses should implement this method to operate on data
+fetched from the database.</p>
+<p>Subclasses override this method to return the
+value that should be passed back to the application,
+given a value that is already processed by
+the underlying <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeEngine</span></code> object, originally
+from the DBAPI cursor method <code class="docutils literal notranslate"><span class="pre">fetchone()</span></code> or similar.</p>
+<p>The operation could be anything desired to perform custom
+behavior, such as transforming or serializing data.
+This could also be used as a hook for validating logic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – Data to operate upon, of any type expected by
+this method in the subclass.  Can be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>dialect</strong> – the <code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code> in use.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This operation should be designed to be reversible by
+the “process_bind_param” method of this class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.JsonEncodedDict">
+<em class="property">class </em><code class="sig-name descname">JsonEncodedDict</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#JsonEncodedDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.JsonEncodedDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.sql.type_api.TypeDecorator</span></code></p>
+<p>Enables JsonEncodedDict storage by encoding and decoding on the fly.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.JsonEncodedDict.impl">
+<code class="sig-name descname">impl</code><a class="headerlink" href="#delphi.apps.rest_api.models.JsonEncodedDict.impl" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.sql.sqltypes.Text</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="delphi.apps.rest_api.models.JsonEncodedDict.process_bind_param">
+<code class="sig-name descname">process_bind_param</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">dialect</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#JsonEncodedDict.process_bind_param"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.JsonEncodedDict.process_bind_param" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a bound parameter value to be converted.</p>
+<p>Subclasses override this method to return the
+value that should be passed along to the underlying
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeEngine</span></code> object, and from there to the
+DBAPI <code class="docutils literal notranslate"><span class="pre">execute()</span></code> method.</p>
+<p>The operation could be anything desired to perform custom
+behavior, such as transforming or serializing data.
+This could also be used as a hook for validating logic.</p>
+<p>This operation should be designed with the reverse operation
+in mind, which would be the process_result_value method of
+this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – Data to operate upon, of any type expected by
+this method in the subclass.  Can be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>dialect</strong> – the <code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code> in use.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="delphi.apps.rest_api.models.JsonEncodedDict.process_result_value">
+<code class="sig-name descname">process_result_value</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">dialect</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#JsonEncodedDict.process_result_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.JsonEncodedDict.process_result_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a result-row column value to be converted.</p>
+<p>Subclasses should implement this method to operate on data
+fetched from the database.</p>
+<p>Subclasses override this method to return the
+value that should be passed back to the application,
+given a value that is already processed by
+the underlying <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeEngine</span></code> object, originally
+from the DBAPI cursor method <code class="docutils literal notranslate"><span class="pre">fetchone()</span></code> or similar.</p>
+<p>The operation could be anything desired to perform custom
+behavior, such as transforming or serializing data.
+This could also be used as a hook for validating logic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – Data to operate upon, of any type expected by
+this method in the subclass.  Can be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>dialect</strong> – the <code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code> in use.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This operation should be designed to be reversible by
+the “process_bind_param” method of this class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.Serializable">
+<em class="property">class </em><code class="sig-name descname">Serializable</code><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#Serializable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.Serializable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="delphi.apps.rest_api.models.Serializable.deserialize">
+<code class="sig-name descname">deserialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#Serializable.deserialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.Serializable.deserialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="delphi.apps.rest_api.models.Serializable.deserialize_list">
+<em class="property">static </em><code class="sig-name descname">deserialize_list</code><span class="sig-paren">(</span><em class="sig-param">l</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#Serializable.deserialize_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.Serializable.deserialize_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.DelphiModel">
+<em class="property">class </em><code class="sig-name descname">DelphiModel</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#DelphiModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.DelphiModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <a class="reference internal" href="#delphi.apps.rest_api.models.Serializable" title="delphi.apps.rest_api.models.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Serializable</span></code></a></p>
+<p>Delphi AnalysisGraph Model</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.DelphiModel.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.DelphiModel.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.DelphiModel.icm_metadata">
+<code class="sig-name descname">icm_metadata</code><a class="headerlink" href="#delphi.apps.rest_api.models.DelphiModel.icm_metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.DelphiModel.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#delphi.apps.rest_api.models.DelphiModel.model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.ICMMetadata">
+<em class="property">class </em><code class="sig-name descname">ICMMetadata</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#ICMMetadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <a class="reference internal" href="#delphi.apps.rest_api.models.Serializable" title="delphi.apps.rest_api.models.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Serializable</span></code></a></p>
+<p>Placeholder docstring for class ICMMetadata.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.icmProvider">
+<code class="sig-name descname">icmProvider</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.icmProvider" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.version">
+<code class="sig-name descname">version</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.created">
+<code class="sig-name descname">created</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.created" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.createdByUser_id">
+<code class="sig-name descname">createdByUser_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.createdByUser_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.createdByUser">
+<code class="sig-name descname">createdByUser</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.createdByUser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.lastAccessed">
+<code class="sig-name descname">lastAccessed</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.lastAccessed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.lastAccessedByUser_id">
+<code class="sig-name descname">lastAccessedByUser_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.lastAccessedByUser_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.lastAccessedByUser">
+<code class="sig-name descname">lastAccessedByUser</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.lastAccessedByUser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.lastUpdated">
+<code class="sig-name descname">lastUpdated</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.lastUpdated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.lastUpdatedByUser_id">
+<code class="sig-name descname">lastUpdatedByUser_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.lastUpdatedByUser_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.lastUpdatedByUser">
+<code class="sig-name descname">lastUpdatedByUser</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.lastUpdatedByUser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.estimatedNumberOfPrimitives">
+<code class="sig-name descname">estimatedNumberOfPrimitives</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.estimatedNumberOfPrimitives" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.lifecycleState">
+<code class="sig-name descname">lifecycleState</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.lifecycleState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.derivation">
+<code class="sig-name descname">derivation</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.derivation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.model_id">
+<code class="sig-name descname">model_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.model_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ICMMetadata.delphimodel">
+<code class="sig-name descname">delphimodel</code><a class="headerlink" href="#delphi.apps.rest_api.models.ICMMetadata.delphimodel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.User">
+<em class="property">class </em><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#User"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <a class="reference internal" href="#delphi.apps.rest_api.models.Serializable" title="delphi.apps.rest_api.models.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Serializable</span></code></a></p>
+<p>Placeholder docstring for class User.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.User.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.User.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.User.username">
+<code class="sig-name descname">username</code><a class="headerlink" href="#delphi.apps.rest_api.models.User.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.User.firstName">
+<code class="sig-name descname">firstName</code><a class="headerlink" href="#delphi.apps.rest_api.models.User.firstName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.User.lastName">
+<code class="sig-name descname">lastName</code><a class="headerlink" href="#delphi.apps.rest_api.models.User.lastName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.User.email">
+<code class="sig-name descname">email</code><a class="headerlink" href="#delphi.apps.rest_api.models.User.email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.User.password">
+<code class="sig-name descname">password</code><a class="headerlink" href="#delphi.apps.rest_api.models.User.password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.User.phone">
+<code class="sig-name descname">phone</code><a class="headerlink" href="#delphi.apps.rest_api.models.User.phone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.User.userStatus">
+<code class="sig-name descname">userStatus</code><a class="headerlink" href="#delphi.apps.rest_api.models.User.userStatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.ServerResponse">
+<em class="property">class </em><code class="sig-name descname">ServerResponse</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#ServerResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.ServerResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <a class="reference internal" href="#delphi.apps.rest_api.models.Serializable" title="delphi.apps.rest_api.models.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Serializable</span></code></a></p>
+<p>Placeholder docstring for class ServerResponse.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ServerResponse.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ServerResponse.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ServerResponse.message">
+<code class="sig-name descname">message</code><a class="headerlink" href="#delphi.apps.rest_api.models.ServerResponse.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive">
+<em class="property">class </em><code class="sig-name descname">CausalPrimitive</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#CausalPrimitive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <a class="reference internal" href="#delphi.apps.rest_api.models.Serializable" title="delphi.apps.rest_api.models.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Serializable</span></code></a></p>
+<p>Top level object that contains common properties that would apply to any causal primitive (variable, relationship, etc.)</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.namespaces">
+<code class="sig-name descname">namespaces</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.types">
+<code class="sig-name descname">types</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.editable">
+<code class="sig-name descname">editable</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.editable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.disableable">
+<code class="sig-name descname">disableable</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.disableable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.lastUpdated">
+<code class="sig-name descname">lastUpdated</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.lastUpdated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.auxiliaryProperties">
+<code class="sig-name descname">auxiliaryProperties</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.auxiliaryProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalPrimitive.model_id">
+<code class="sig-name descname">model_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalPrimitive.model_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.Entity">
+<em class="property">class </em><code class="sig-name descname">Entity</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#Entity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.Entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.CausalPrimitive" title="delphi.apps.rest_api.models.CausalPrimitive"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.CausalPrimitive</span></code></a></p>
+<p>Placeholder docstring for class Entity.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.confidence">
+<code class="sig-name descname">confidence</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.confidence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.auxiliaryProperties">
+<code class="sig-name descname">auxiliaryProperties</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.auxiliaryProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.disableable">
+<code class="sig-name descname">disableable</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.disableable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.editable">
+<code class="sig-name descname">editable</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.editable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.lastUpdated">
+<code class="sig-name descname">lastUpdated</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.lastUpdated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.model_id">
+<code class="sig-name descname">model_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.model_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.namespaces">
+<code class="sig-name descname">namespaces</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Entity.types">
+<code class="sig-name descname">types</code><a class="headerlink" href="#delphi.apps.rest_api.models.Entity.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.CausalVariable">
+<em class="property">class </em><code class="sig-name descname">CausalVariable</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#CausalVariable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.CausalPrimitive" title="delphi.apps.rest_api.models.CausalPrimitive"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.CausalPrimitive</span></code></a></p>
+<p>Placeholder docstring for class CausalVariable.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.units">
+<code class="sig-name descname">units</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.backingEntities">
+<code class="sig-name descname">backingEntities</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.backingEntities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.lastKnownValue">
+<code class="sig-name descname">lastKnownValue</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.lastKnownValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.confidence">
+<code class="sig-name descname">confidence</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.confidence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.range">
+<code class="sig-name descname">range</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.auxiliaryProperties">
+<code class="sig-name descname">auxiliaryProperties</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.auxiliaryProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.disableable">
+<code class="sig-name descname">disableable</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.disableable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.editable">
+<code class="sig-name descname">editable</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.editable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.lastUpdated">
+<code class="sig-name descname">lastUpdated</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.lastUpdated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.model_id">
+<code class="sig-name descname">model_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.model_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.namespaces">
+<code class="sig-name descname">namespaces</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalVariable.types">
+<code class="sig-name descname">types</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalVariable.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable">
+<em class="property">class </em><code class="sig-name descname">ConfigurationVariable</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#ConfigurationVariable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.CausalPrimitive" title="delphi.apps.rest_api.models.CausalPrimitive"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.CausalPrimitive</span></code></a></p>
+<p>Placeholder docstring for class ConfigurationVariable.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.units">
+<code class="sig-name descname">units</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.lastKnownValue">
+<code class="sig-name descname">lastKnownValue</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.lastKnownValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.range">
+<code class="sig-name descname">range</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.auxiliaryProperties">
+<code class="sig-name descname">auxiliaryProperties</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.auxiliaryProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.disableable">
+<code class="sig-name descname">disableable</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.disableable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.editable">
+<code class="sig-name descname">editable</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.editable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.lastUpdated">
+<code class="sig-name descname">lastUpdated</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.lastUpdated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.model_id">
+<code class="sig-name descname">model_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.model_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.namespaces">
+<code class="sig-name descname">namespaces</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ConfigurationVariable.types">
+<code class="sig-name descname">types</code><a class="headerlink" href="#delphi.apps.rest_api.models.ConfigurationVariable.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.CausalRelationship">
+<em class="property">class </em><code class="sig-name descname">CausalRelationship</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#CausalRelationship"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.CausalPrimitive" title="delphi.apps.rest_api.models.CausalPrimitive"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.CausalPrimitive</span></code></a></p>
+<p>Placeholder docstring for class CausalRelationship.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.source">
+<code class="sig-name descname">source</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.target">
+<code class="sig-name descname">target</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.target" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.confidence">
+<code class="sig-name descname">confidence</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.confidence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.strength">
+<code class="sig-name descname">strength</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.strength" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.reinforcement">
+<code class="sig-name descname">reinforcement</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.reinforcement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.auxiliaryProperties">
+<code class="sig-name descname">auxiliaryProperties</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.auxiliaryProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.disableable">
+<code class="sig-name descname">disableable</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.disableable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.editable">
+<code class="sig-name descname">editable</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.editable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.lastUpdated">
+<code class="sig-name descname">lastUpdated</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.lastUpdated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.model_id">
+<code class="sig-name descname">model_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.model_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.namespaces">
+<code class="sig-name descname">namespaces</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CausalRelationship.types">
+<code class="sig-name descname">types</code><a class="headerlink" href="#delphi.apps.rest_api.models.CausalRelationship.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.Relationship">
+<em class="property">class </em><code class="sig-name descname">Relationship</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#Relationship"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.CausalPrimitive" title="delphi.apps.rest_api.models.CausalPrimitive"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.CausalPrimitive</span></code></a></p>
+<p>Placeholder docstring for class Relationship.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.source">
+<code class="sig-name descname">source</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.target">
+<code class="sig-name descname">target</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.target" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.confidence">
+<code class="sig-name descname">confidence</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.confidence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.auxiliaryProperties">
+<code class="sig-name descname">auxiliaryProperties</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.auxiliaryProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.disableable">
+<code class="sig-name descname">disableable</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.disableable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.editable">
+<code class="sig-name descname">editable</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.editable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.lastUpdated">
+<code class="sig-name descname">lastUpdated</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.lastUpdated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.model_id">
+<code class="sig-name descname">model_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.model_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.namespaces">
+<code class="sig-name descname">namespaces</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Relationship.types">
+<code class="sig-name descname">types</code><a class="headerlink" href="#delphi.apps.rest_api.models.Relationship.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.Evidence">
+<em class="property">class </em><code class="sig-name descname">Evidence</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#Evidence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.Evidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <a class="reference internal" href="#delphi.apps.rest_api.models.Serializable" title="delphi.apps.rest_api.models.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Serializable</span></code></a></p>
+<p>Object that holds a reference to evidence (either KO from TA1 or human provided).</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Evidence.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.Evidence.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Evidence.link">
+<code class="sig-name descname">link</code><a class="headerlink" href="#delphi.apps.rest_api.models.Evidence.link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Evidence.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#delphi.apps.rest_api.models.Evidence.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Evidence.category">
+<code class="sig-name descname">category</code><a class="headerlink" href="#delphi.apps.rest_api.models.Evidence.category" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Evidence.rank">
+<code class="sig-name descname">rank</code><a class="headerlink" href="#delphi.apps.rest_api.models.Evidence.rank" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Evidence.causalrelationship_id">
+<code class="sig-name descname">causalrelationship_id</code><a class="headerlink" href="#delphi.apps.rest_api.models.Evidence.causalrelationship_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.Experiment">
+<em class="property">class </em><code class="sig-name descname">Experiment</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#Experiment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.Experiment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <a class="reference internal" href="#delphi.apps.rest_api.models.Serializable" title="delphi.apps.rest_api.models.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Serializable</span></code></a></p>
+<p>structure used for experimentation</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Experiment.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.Experiment.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Experiment.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.Experiment.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Experiment.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.Experiment.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.Experiment.options">
+<code class="sig-name descname">options</code><a class="headerlink" href="#delphi.apps.rest_api.models.Experiment.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.ForwardProjection">
+<em class="property">class </em><code class="sig-name descname">ForwardProjection</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#ForwardProjection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.Experiment" title="delphi.apps.rest_api.models.Experiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Experiment</span></code></a></p>
+<p>Placeholder docstring for class ForwardProjection.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjection.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjection.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjection.interventions">
+<code class="sig-name descname">interventions</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjection.interventions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjection.projection">
+<code class="sig-name descname">projection</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjection.projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjection.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjection.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjection.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjection.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjection.options">
+<code class="sig-name descname">options</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjection.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysis">
+<em class="property">class </em><code class="sig-name descname">SensitivityAnalysis</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#SensitivityAnalysis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.Experiment" title="delphi.apps.rest_api.models.Experiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Experiment</span></code></a></p>
+<p>Placeholder docstring for class SensitivityAnalysis.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysis.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysis.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysis.nodeOfInterest">
+<code class="sig-name descname">nodeOfInterest</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysis.nodeOfInterest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysis.numSteps">
+<code class="sig-name descname">numSteps</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysis.numSteps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysis.sensitivityVariables">
+<code class="sig-name descname">sensitivityVariables</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysis.sensitivityVariables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysis.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysis.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysis.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysis.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysis.options">
+<code class="sig-name descname">options</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysis.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.ExperimentResult">
+<em class="property">class </em><code class="sig-name descname">ExperimentResult</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#ExperimentResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.ExperimentResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <a class="reference internal" href="#delphi.apps.rest_api.models.Serializable" title="delphi.apps.rest_api.models.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.Serializable</span></code></a></p>
+<p>Notional model of experiment results</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ExperimentResult.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.ExperimentResult.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ExperimentResult.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ExperimentResult.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.CauseMosForwardProjectionResult">
+<em class="property">class </em><code class="sig-name descname">CauseMosForwardProjectionResult</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#CauseMosForwardProjectionResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.CauseMosForwardProjectionResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.ExperimentResult" title="delphi.apps.rest_api.models.ExperimentResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.ExperimentResult</span></code></a></p>
+<p>Placeholder docstring for class CauseMosForwardProjectionResult.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CauseMosForwardProjectionResult.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.CauseMosForwardProjectionResult.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CauseMosForwardProjectionResult.results">
+<code class="sig-name descname">results</code><a class="headerlink" href="#delphi.apps.rest_api.models.CauseMosForwardProjectionResult.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.CauseMosForwardProjectionResult.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.CauseMosForwardProjectionResult.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.ForwardProjectionResult">
+<em class="property">class </em><code class="sig-name descname">ForwardProjectionResult</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#ForwardProjectionResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjectionResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.ExperimentResult" title="delphi.apps.rest_api.models.ExperimentResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.ExperimentResult</span></code></a></p>
+<p>Placeholder docstring for class ForwardProjectionResult.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjectionResult.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjectionResult.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjectionResult.projection">
+<code class="sig-name descname">projection</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjectionResult.projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjectionResult.results">
+<code class="sig-name descname">results</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjectionResult.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.ForwardProjectionResult.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.ForwardProjectionResult.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysisResult">
+<em class="property">class </em><code class="sig-name descname">SensitivityAnalysisResult</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/models.html#SensitivityAnalysisResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysisResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#delphi.apps.rest_api.models.ExperimentResult" title="delphi.apps.rest_api.models.ExperimentResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">delphi.apps.rest_api.models.ExperimentResult</span></code></a></p>
+<p>Placeholder docstring for class SensitivityAnalysisResult.</p>
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysisResult.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysisResult.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysisResult.results">
+<code class="sig-name descname">results</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysisResult.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="delphi.apps.rest_api.models.SensitivityAnalysisResult.baseType">
+<code class="sig-name descname">baseType</code><a class="headerlink" href="#delphi.apps.rest_api.models.SensitivityAnalysisResult.baseType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-delphi.apps.rest_api.run">
+<span id="delphi-apps-rest-api-run-module"></span><h2>delphi.apps.rest_api.run module<a class="headerlink" href="#module-delphi.apps.rest_api.run" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="delphi.apps.rest_api.run.main">
+<code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api/run.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.run.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-delphi.apps.rest_api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-delphi.apps.rest_api" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="delphi.apps.rest_api.create_app">
+<code class="sig-name descname">create_app</code><span class="sig-paren">(</span><em class="sig-param">debug=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/delphi/apps/rest_api.html#create_app"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#delphi.apps.rest_api.create_app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Adarsh
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
